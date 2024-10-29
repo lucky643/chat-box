@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Chat-Box</title>
+     <link rel="stylesheet" type="text/css" href="/public/stylesheet/style.css">
+     <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900">
+     <div id="overlay" class="w-full h-screen fixed z-[999] bg-zinc-900 flex items-center justify-center">
+          <div>
+               <input id="nameInput" class="px-2 py-1 rounded-md bg-zinc-500 outline-none" type="text" placeholder="Enter your name" autocomplete="off">
+               <button class="submit bg-blue-500 rounded-lg px-2 py-1 hover:bg-blue-400">submit</button>
+          </div>
+     </div>
+     <div class="w-full h-screen flex flex-col items-center justify-center">
+          <h1 class="font-sans text-3xl italic font-bold text-zinc-600 mb-4">Chat-Box</h1>
+          <div class="font-bold font-sans italic text-gray-400 mb-4">👋Hey <span class="username">a</span></div>
+          <div id="chatbox" class="w-full sm:w-3/4 lg:w-1/2 h-2/3 bg-zinc-700 shadow shadow-zinc-800 rounded-md flex flex-col">
+               <div class="w-full h-8 bg-transparent border-b border-slate-950 py-2 flex items-center flex justify-between">                                                                                                                                                                 
+                    <div class="text-white font-thin font-sans text-sm italic px-2"><span class="active"></span> users active..</div>
+                    <div class="text-white font-thin font-sans text-sm italic px-2"><span class="typing"></span></div>
+               </div>
+               <div id="messages" class="w-full bg-transparent overflow-y-auto custom-scrollbar flex-grow p-2">
+               </div>
+               <div class="w-full border-t border-slate-950 py-3 flex items-center">
+                    <input class="input w-2/3 sm:w-3/4 rounded-full px-3 sm:px-5 py-1 bg-zinc-100 mx-3 sm:mx-5 outline-none" type="text" placeholder="type here....">
+                    <button id="sendButton" class="rounded-full bg-blue-700 text-white px-2 py-1 hover:bg-blue-500">send</button>
+               </div>
+          </div>
+     </div>
+
+     <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+          integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+          crossorigin="anonymous"></script>
+     <script src="/public/script/script.js"></script>
+</body>
+</html>
+
